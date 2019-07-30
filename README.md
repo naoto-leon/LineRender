@@ -2,7 +2,7 @@
 use LineRenderer
 
 #### LineRenderer覚書き
-![Sine](https://user-images.githubusercontent.com/43961147/61839923-5be6f400-aeca-11e9-9b2c-0a1a55fb19c5.gif)
+![linerendergif](https://user-images.githubusercontent.com/43961147/62136317-d2e31900-b31e-11e9-80b7-645941e517d5.gif)
 *** 
 
 LineRendererが配列で構成されているという事なので、同じく配列を使った何かと相性が良さそう。  
