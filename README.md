@@ -50,4 +50,4 @@ LineRendererが配列で構成されているという事なので、同じく�
             point[i].transform.position = Pos;
         }
     }
-}
+    }
