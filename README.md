@@ -12,8 +12,8 @@ LineRendererが配列で構成されているという事なので、同じく�
 
     public class Laser_spectram : MonoBehaviour
     {
-    public AudioSpectrum spectrum;
-    public GameObject[] point;
+       public AudioSpectrum spectrum;
+       public GameObject[] point;
 
     public GameObject obj;
     private LineRenderer lineRenderer;
@@ -24,7 +24,6 @@ LineRendererが配列で構成されているという事なので、同じく�
     void Start()
     {
         lineRenderer = obj.GetComponent<LineRenderer>();
-        //lineRendererの設定
         lineRenderer.SetWidth(.1f, .1f);
         lineRenderer.SetColors(Color.white, Color.white);
 
@@ -36,16 +35,28 @@ LineRendererが配列で構成されているという事なので、同じく�
     {
       
 
-        for (int i = 0; i < point.Length; i++)
+        for (int i = 1; i < point.Length; i=i+2)
         {
             point[i] = transform.GetChild(i).gameObject;
             Vector3 Pos = point[i].transform.position;
      
             lineRenderer.SetPosition(i, Pos);
-            //lineRenderer.SetPosition(配列, ポジション);
 
-            Pos.y = (spectrum.MeanLevels[i]*-120)+10;
+         
+                Pos.y = (spectrum.MeanLevels[i] * -220) ;           
 
+            point[i].transform.position = Pos;
+        }
+
+        for (int i = 0; i < point.Length; i = i + 2)
+        {
+            point[i] = transform.GetChild(i).gameObject;
+            Vector3 Pos = point[i].transform.position;
+
+            lineRenderer.SetPosition(i, Pos);
+
+
+            Pos.y = (spectrum.MeanLevels[i] * +220) ;
 
             point[i].transform.position = Pos;
         }
